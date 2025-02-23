@@ -1,0 +1,132 @@
+.phonedetail-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .phonedetailcard {
+    width: 100%;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+   
+    display: flex;
+  }
+  
+  .phonedetailimage-slider {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    margin: auto;
+  }
+  
+  .phonedetailproduct-image {
+    width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .phonedetailslider-btn {
+    position: absolute;
+    bottom: -30px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    padding: 6px;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .phonedetailslider-btn:hover {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  
+  .left {
+    left: 40%;
+  }
+  
+  .right {
+    right: 40%;
+  }
+  
+  .phonedetailactions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .add-to-cart {
+    background-color: #ff9800;
+    color: white;
+  }
+  
+  .buy-now {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .quantity-input {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+  }
+  
+  .phonedetailcard-content {
+    width: 60%;
+    margin: auto;
+  }
+  
+  .phonedetailtitle {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .phonedetailprice {
+    font-size: 20px;
+    color: #d9534f;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .phonedetailmodel, .phonedetailbrand {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .phonedetailspecs {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .phonedetailspecs li {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 5px;
+  }
+  
