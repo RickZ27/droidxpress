@@ -1,16 +1,18 @@
 /* src/components/Sidebar.css */
 .sidebar {
     width: 250px;
-    height: auto;
-    background: linear-gradient(102deg, #01674f 11.81%, #02cd9d 119.4%);
+    height: 100vh;
+    background-color: #2c3e50;
     color: white;
     position: fixed;
-    left: 0;
-    top: 100px;
-    z-index: 999;
-    border-radius: 0 20px 20px 0;
 }
 
+.sidebar-title {
+    text-align: center;
+    color: #ecf0f1;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
 
 .sidebar-menu {
     list-style-type: none;
@@ -19,26 +21,20 @@
 
 .sidebar-menu li {
     list-style-type: none;
-    padding: 12px;
+    padding: 10px;
 }
 
 .sidebar-menu li a {
     text-decoration: none;
-    color: rgb(255, 255, 255);
+    color: white;
     display: block;
-    padding: 12px;
-    border-radius: 5px; /* Slightly rounded corners for better look */
-    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
 }
 
 .sidebar-menu li.active a {
-    background: linear-gradient(102deg, #024a76 11.81%, #02a6cd 119.4%);
-    color: white; 
-    font-weight: bold;
+    background-color: #007bff; /* Active background color */
+    color: white; /* Active text color */
 }
 
 .sidebar-menu li a:hover {
-    background: linear-gradient(102deg, #024a76 11.81%, #954aaa 119.4%);
-    color: white;
-    transform: scale(1.05);
+    background-color: red; /* Hover background */
 }

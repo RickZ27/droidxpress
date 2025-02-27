@@ -70,6 +70,7 @@ const ProductList = () => {
                             <th>Name</th>
                             <th>Model Series</th>
                             <th>Stock</th>
+                            <th>Brand</th>
                             <th>Category</th>
                             <th>Price</th>
                             <th>Actions</th>
@@ -82,6 +83,7 @@ const ProductList = () => {
                                 <td>{product.name}</td>
                                 <td>{product.modelseries || "N/A"}</td>
                                 <td>{product.stock}</td>
+                                <td>{product.brand}</td>
                                 <td>{product.category}</td>
                                 <td>Rs. {product.price}</td>
                                 <td className="product-actions">

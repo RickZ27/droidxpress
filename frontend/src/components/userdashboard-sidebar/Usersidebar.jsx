@@ -1,9 +1,10 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import "./usersidebar.css"; 
+import "./usersidebar.css"; // Ensure you have the CSS for styling
 
 const UserSidebar = () => {
   const navigate = useNavigate();
-  const location = useLocation(); 
+  const location = useLocation(); // Get current path
+
   return (
     <aside className="usersidebar">
       <ul>
@@ -14,16 +15,16 @@ const UserSidebar = () => {
           Account Dashboard
         </li>
         <li
-          onClick={() => navigate("/orders")}
-          className={location.pathname === "/orders" ? "active" : ""}
+          onClick={() => navigate("/order")}
+          className={location.pathname === "/order" ? "active" : ""}
         >
           My Orders
         </li>
         <li
-          onClick={() => navigate("/wishlist")}
-          className={location.pathname === "/wishlist" ? "active" : ""}
+          onClick={() => navigate("/cartlist")}
+          className={location.pathname === "/cartlist" ? "active" : ""}
         >
-          My Wishlist
+          My Cart
         </li>
         <li
           onClick={() => navigate("/edituser-info")}

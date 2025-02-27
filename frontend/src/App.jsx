@@ -4,19 +4,28 @@ import Footer from "./components/footer/Footer";
 import Landingpage from "./pages/landingpage/Landingpage";
 import AppleList from "./pages/apple/AppleList";
 import SamsungList from "./pages/samsung/SamsungList"
-import Gadgets from "./pages/gadgets/Gadgets";
-// import NotebookList from "./pages/notebook/Notebook"
-// import UltrabookList from "./pages/ultrabook/Ultrabook"
-import PhoneDetail from "./pages/phonedetails/PhoneDetail"
+import MIList from "./pages/MI/MIList";
+import OppoList from "./pages/oppo/OppoList"
+import VivoList from "./pages/vivo/VivoList"
+import OneplusList from "./pages/oneplus/Oneplus"
+
+import MobileDetails from "./pages/mobiledetails/PhoneDetail"
+import SearchResult from "./pages/searchpage/SearchPage"
+// import Cartlist from "./pages/cart/AddCart"
+
+
+
 
 import UserLogin from "./pages/user-auth/userlogin/UserLogin";
 import UserSignup from "./pages/user-auth/usersignup/Usersignup";
 import UserDashboard from "./pages/userdashboard/UserDashboard";
 import EdituserAccount from "./components/userdashboard-sidebar/EdituserAccount";
+import CartList from "./pages/cart/CartList"
+import OrderList from "./pages/order/Orderdetail"
+
+
 // import Cart from "./pages/cart/Cart";
-// import Wishlist from "./pages/wishlist/Wishlist";
 import AdminRoutes from "./adminPanel/Adminroute";
-import { Phone } from "lucide-react";
 
 function App() {
   return (
@@ -44,11 +53,15 @@ const Layout = () => {
 
         {/* Public Routes */}
         <Route path="/" element={<Landingpage />} />
-        <Route path="/applelist/" element={<AppleList />} />
-        <Route path="/samsunglist/" element={<SamsungList />} />
+        <Route path="/apple/" element={<AppleList />} />
+        <Route path="/samsung/" element={<SamsungList />} />
+        <Route path="/MI/" element={<MIList />} />
+        <Route path="/oppo/" element={<OppoList />} />
+        <Route path="/vivo/" element={<VivoList />} />
+        <Route path="/oneplus/" element={<OneplusList />} />
+        <Route path="/laptopdetail/:id" element={<MobileDetails />} />
+        <Route path="/search" element={<SearchResult />} />
 
-
-        <Route path="/phonedetail/" element={<PhoneDetail />} />
 
 
 
@@ -57,9 +70,13 @@ const Layout = () => {
         <Route path="/usersignup" element={<UserSignup />} />
         <Route path="/userdashboard-accountinfo" element={<UserDashboard />} />
         <Route path="/edituser-info" element={<EdituserAccount />} />
+        <Route path="/cartlist" element={<CartList />} />
+        <Route path="/order" element={<OrderList />} />
 
-         {/*<Route path="/cart" element={<Cart />} />
-        <Route path="/wishlist" element={<Wishlist />} /> */}
+        {/* <Route path="/cartlist" element={<Cartlist />} /> */}
+
+
+        
       </Routes>
 
       {/* Render Footer only for public routes */}

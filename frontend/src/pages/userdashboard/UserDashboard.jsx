@@ -9,9 +9,9 @@ const UserDashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const token = localStorage.getItem("userToken");
+    const token = localStorage.getItem("user");
     if (!token) {
-      navigate("/userlogin"); 
+      navigate("/userlogin"); // Redirect to login page if no token
     }
   }, [navigate]);
 

@@ -3,7 +3,7 @@ const pool = require("../database/db");
 class ProductModel {
     static async addProduct(data) {
         const {
-            name, modelseries, description, category,  price, stock, 
+            name, modelseries, description, category, price, stock, 
             processor, ram, storage, screenSize, os, images
         } = data;
 
@@ -24,9 +24,9 @@ class ProductModel {
 
     static async getAllProducts() {
         const query = `
-            SELECT id, name, modelseries, stock, category, price
-            FROM products
-        `;
+            SELECT *
+            FROM products ORDER BY created_at DESC LIMIT 20`
+        ;
         const result = await pool.query(query);
         return result.rows;
     }
@@ -53,7 +53,7 @@ class ProductModel {
 
         const query = `
             UPDATE products SET 
-                name = $1, modelseries = $2, description = $3, category = $4, 
+                name = $1, modelseries = $2, description = $3, category = $4,
                 price = $5, stock = $6, processor = $7, ram = $8, storage = $9, 
                 screenSize = $10, os = $11, images = $12
             WHERE id = $13 RETURNING *`;
@@ -75,12 +75,25 @@ class ProductModel {
         return result.rows;
     }
 
-    static async getMobilesList(category) {
+    static async getLaptopsList(category) {
         const query = `SELECT * FROM products WHERE category = $1 ORDER BY created_at DESC`;
         const values = [category];
         const result = await pool.query(query, values);
         return result.rows;
     }
+
+    static async getLaptopDetails  (id){
+        try {
+            const result = await pool.query(
+                "SELECT * FROM products WHERE id = $1",
+                [id]
+            );
+            return result.rows[0];
+        } catch (error) {
+            console.error("Error fetching product:", error);
+            throw error;
+        }
+    };
 
     
 

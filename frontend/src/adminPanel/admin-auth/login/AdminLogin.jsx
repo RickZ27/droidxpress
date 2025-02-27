@@ -23,7 +23,7 @@ const AdminLogin = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
     
-        const response = await fetch("http://localhost:5000/api/admin/login", {
+        const response = await fetch("http://localhost:5000/api/admin/adminlogin", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
@@ -37,7 +37,7 @@ const AdminLogin = () => {
             localStorage.setItem("adminToken", data.token);  // ✅ Store Token
             localStorage.setItem("adminName", data.admin?.name || ""); // ✅ Store Admin Name
     
-        
+            alert("Login Successful");
             navigate("/admin/dashboard"); // Redirect to dashboard
         } else {
             alert(data.msg);
@@ -52,41 +52,40 @@ const AdminLogin = () => {
 
     // Navigate to signup page
     const handleSignupRedirect = () => {
-        navigate("/admin/signup");
+        navigate("/admin/adminsignup");
     };
 
     return (
-        <div className="auth-wrapper">
-            <div className="admin-auth-container">
-                <h2>Welcome back, Admin!</h2>
-                <form onSubmit={handleSubmit} className="login-form">
-                    <input
-                        type="email"
-                        name="email"
-                        placeholder="Email"
-                        onChange={handleChange}
-                        value={formData.email}
-                        required
-                    />
-                    <input
-                        type="password"
-                        name="password"
-                        placeholder="Password"
-                        onChange={handleChange}
-                        value={formData.password}
-                        required
-                    />
-                    <button className="login-btn" type="submit">Login</button>
-                </form>
-                <div className="auth-links">
-                    <span onClick={handleForgotPassword}>Forgot Password?</span>
-                    <p>
-                        Don't have an account?{" "}
-                        <span onClick={handleSignupRedirect} className="signup-link">
-                            Sign Up
-                        </span>
-                    </p>
-                </div>
+        <div className="admin-auth-container">
+            <h2>Welcome back, Admin!</h2>
+            <form onSubmit={handleSubmit} className="login-form">
+                <input
+                    type="email"
+                    name="email"
+                    placeholder="Email"
+                    onChange={handleChange}
+                    value={formData.email}
+                    required
+                />
+                <input
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    onChange={handleChange}
+                    value={formData.password}
+                    required
+                />
+                <button className="login-btn" type="submit">Login</button>
+            </form>
+
+            <div className="auth-links">
+                <button onClick={handleForgotPassword}>Forgot Password?</button>
+                <p>
+                    Don't have an account?{" "}
+                    <span onClick={handleSignupRedirect} className="signup-link">
+                        Sign Up
+                    </span>
+                </p>
             </div>
         </div>
     );

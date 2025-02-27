@@ -73,8 +73,8 @@ const EditProduct = () => {
     };
 
     const handleRemoveImage = (img) => {
-        setImagesToRemove((prev) => [...prev, img]); 
-        setExistingImages((prev) => prev.filter((image) => image !== img)); 
+        setImagesToRemove((prev) => [...prev, img]); // Track removed images
+        setExistingImages((prev) => prev.filter((image) => image !== img)); // Update UI
     };
 
     const handleSubmit = async (e) => {
@@ -108,13 +108,13 @@ const EditProduct = () => {
     };
 
     return (
-        <div className="edit-product-container" style={{ display: "flex" }}>
+        <div className="editproduct-container" style={{ display: "flex" }}>
             <Sidebar />
             <div style={{ marginLeft: "250px", width: "100%" }}>
                 <AdminNavbar />
                 <div style={{ padding: "50px" }}>
                     <h2>Edit Product</h2>
-                    <form onSubmit={handleSubmit} className="edit-product-form" encType="multipart/form-data">
+                    <form onSubmit={handleSubmit} className="editproduct-form" encType="multipart/form-data">
                         <label>Product Name:</label>
                         <input type="text" name="name" value={productDetails.name} onChange={handleChange} required />
 
@@ -128,13 +128,13 @@ const EditProduct = () => {
                         <select name="category" value={productDetails.category} onChange={handleChange} required>
                         <option value="Apple">Apple</option>
                             <option value="Samsung">Samsung</option>
-                            <option value="Oppo">Oppo</option>
                             <option value="MI">MI</option>
+                            <option value="Oppo">Oppo</option>
                             <option value="Vivo">Vivo</option>
-                            <option value="OnePlus">Oneplus</option>
+                            <option value="Oneplus">Oneplus</option>
                         </select>
 
-                       
+                        
 
                         <label>Price:</label>
                         <input type="number" name="price" value={productDetails.price} onChange={handleChange} required />

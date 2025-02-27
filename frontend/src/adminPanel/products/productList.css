@@ -1,5 +1,4 @@
 .product-list-container {
-    margin-top: 50px;
     display: flex;
     background-color: #f9f9f9;
     min-height: 100vh;
@@ -12,24 +11,27 @@
 }
 
 .addproduct-content{
-    margin: 20px 20px 20px 30px;
-    display: flex;
+    margin: 20px ;
+   display: flex;
     font-weight: bold;
     align-items: center;
     justify-content: space-between;
     
 }
 .add-btn {
-    margin-top: 16px;
     padding: 12px 20px;
-    background: linear-gradient(102deg, #024a76 11.81%, #02a6cd 119.4%);
+    background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
+  }
+  
+  .add-btn:hover {
+    background-color: #0056b3;
+  }
 
 .product-list-table {
     width: 95%;
@@ -47,7 +49,7 @@
 }
 
 .product-list-table th {
-    background-color: #12856a;
+    background-color: #007BFF;
     color: white;
     font-weight: bold;
 }

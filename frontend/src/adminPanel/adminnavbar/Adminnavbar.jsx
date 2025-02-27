@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AdminNavbar.css";
-import logo from "../../assets/whitelogo.png";
+import "./AdminNavbar.css"; // Make sure to adjust the CSS path if necessary
+import logo from "../../assets/blacklogo.png"; // Correct logo path
 
 const AdminNavbar = () => {
     const [adminName, setAdminName] = useState("");
@@ -24,14 +24,13 @@ const AdminNavbar = () => {
     }, [navigate]);
 
     const handleLogout = () => {
-        localStorage.removeItem("adminToken"); 
-        localStorage.removeItem("adminName");
-        navigate("/admin/");
+        localStorage.removeItem("adminToken"); // Remove token
+        localStorage.removeItem("adminName"); // Remove admin name
+        navigate("/admin/"); // Redirect to login
     };
 
     return (
         <nav className="admin-navbar">
-            <h3 className="sidebar-title">Admin Dashboard</h3>
             <div className="logo">
                 <img src={logo} alt="Admin Logo" />
             </div>

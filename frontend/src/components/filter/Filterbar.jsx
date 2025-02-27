@@ -3,7 +3,7 @@ import "./filterbar.css";
 
 const FilterComponent = ({ setFilteredProducts, phoneList }) => {
   const [selectedBrand, setSelectedBrand] = useState("");
-  const [priceRange, setPriceRange] = useState([20000, 1000000]);
+  const [priceRange, setPriceRange] = useState([0, 1000000]);
 
   const brands = ["Apple", "Oppo", "Vivo", "Oneplus", "MI", "Samsung"];
 

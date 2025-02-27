@@ -19,7 +19,7 @@ const AdminSignup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5000/api/admin/signup", {
+        const response = await fetch("http://localhost:5000/api/admin/adminsignup", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(formData),
@@ -38,27 +38,26 @@ const AdminSignup = () => {
     };
 
     return (
-        <div className="auth-wrapper">
-            <div className="admin-auth-container">
-                <h2>Admin Signup</h2>
-                <form onSubmit={handleSubmit} className="signup-form">
-                    <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
-                    <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
-                    <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
-                    <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
-                    <button className="signup-btn" type="submit">Signup</button>
-                </form>
-                <div className="auth-links">
-                    <p>
-                        Are you already registered?{" "}
-                        <span onClick={navigateToLogin} className="signup-link">
-                            Login Here
-                        </span>
-                    </p>
-                </div>
+        <div className="admin-auth-container">
+            <h2>Admin Signup</h2>
+            <form onSubmit={handleSubmit} className="signup-form">
+                <input type="text" name="name" placeholder="Name" onChange={handleChange} required />
+                <input type="text" name="username" placeholder="Username" onChange={handleChange} required />
+                <input type="email" name="email" placeholder="Email" onChange={handleChange} required />
+                <input type="password" name="password" placeholder="Password" onChange={handleChange} required />
+                <button className="signup-btn" type="submit">Signup</button>
+            </form>
+
+            <div className="auth-links">
+                <p>
+                    Are you already registered?{" "}
+                    <span onClick={navigateToLogin} className="signup-link">
+                        Login Here
+                    </span>
+                </p>
             </div>
         </div>
-    );
+    ); 
 };
 
 export default AdminSignup;

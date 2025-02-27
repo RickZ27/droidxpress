@@ -115,15 +115,15 @@ const AddProduct = () => {
                         <label>Description:</label>
                         <textarea name="description" value={productDetails.description} onChange={handleChange} required />
 
-                        <label>Phone Category:</label>
+                        <label>Category:</label>
                         <select name="category" value={productDetails.category} onChange={handleChange} required>
                             <option value="Apple">Apple</option>
                             <option value="Samsung">Samsung</option>
-                            <option value="Oppo">Oppo</option>
                             <option value="MI">MI</option>
+                            <option value="Oppo">Oppo</option>
                             <option value="Vivo">Vivo</option>
-                            <option value="OnePlus">Oneplus</option>
-                            <option value="Gadgets">Gadgets</option>
+                            <option value="Oneplus">Oneplus</option>
+
                         </select>
 
                         

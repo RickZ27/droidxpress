@@ -12,7 +12,7 @@ const AccountInformation = () => {
       try {
         const token = localStorage.getItem("userToken"); 
         if (!token) {
-          console.error("No token found, please try logging in");
+          console.error("No token found, please log in");
           return;
         }
 

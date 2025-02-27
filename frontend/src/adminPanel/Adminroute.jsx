@@ -6,16 +6,20 @@ import Dashboard from "./Dashboard";
 import ListProduct from "./products/ProductList";
 import AddProduct from "./products/addproduct/Addproduct";
 import EditProduct from './products/editproduct/Editproduct'
+import OrderManage from './products/manageorder/OrderManage'
+
 
 const AdminRoutes = () => {
   return (
     <Routes>
       <Route path="" element={<AdminLogin />} />
-      <Route path="/signup" element={<AdminSignup />} />
+      <Route path="/adminsignup" element={<AdminSignup />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/listproduct" element={<ListProduct />} />
       <Route path="/add-product" element={<AddProduct />} />
-      <Route path="/edit-product/:id" element={<EditProduct />} />      
+      <Route path="/edit-product/:id" element={<EditProduct />} /> 
+      <Route path="/adminorder/" element={<OrderManage />} />      
+     
       
     </Routes>
   );
