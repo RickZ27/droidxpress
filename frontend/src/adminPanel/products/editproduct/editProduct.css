@@ -48,7 +48,7 @@
   /* Button styles */
   .update-btn {
     padding: 12px 20px;
-    background-color: #007BFF;
+    background: linear-gradient(102deg, #01674f 11.81%, #02cd9d 119.4%);
     color: white;
     border: none;
     border-radius: 4px;

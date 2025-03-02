@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom"; // Import useNavigate
-import "../userauth.css";
+import "../userauthentication.css";
 
 const UserSignup = () => {
   const [formData, setFormData] = useState({
@@ -66,7 +66,7 @@ const UserSignup = () => {
           <p>
             Already registered?{" "}
             <span onClick={() => navigate("/userlogin")} className="usersignup-link">
-              Login Here
+              Login
             </span>
           </p>
         </div>

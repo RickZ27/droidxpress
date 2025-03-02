@@ -4,6 +4,7 @@ import axios from "axios";
 import "./navbar.css"; // Import CSS file
 import { FaHeart, FaShoppingCart, FaUser } from "react-icons/fa";
 import logo from "../../assets/blacklogo.png";
+import { FaSearch } from 'react-icons/fa'; // Import the search icon
 
 const Navbar = ({ onUserLogin }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -74,6 +75,8 @@ const Navbar = ({ onUserLogin }) => {
     <header>
       {/* First Row */}
       <div className="top-bar">
+
+        <div className="search-logo-arrange">
         <Link to="/" className="logo">
           <img src={logo} alt="DroidXpress Logo" className="logo-img" />
         </Link>
@@ -82,18 +85,18 @@ const Navbar = ({ onUserLogin }) => {
           <form onSubmit={handleSearchSubmit} className="search-bar">
             <input
               type="text"
-              placeholder="Search for laptops, brands..."
+              placeholder="Explore your phones..."
               value={searchQuery}
               onChange={handleSearchChange}
             />
-            <button type="submit">🔍</button>
+            <button  type="submit"><FaSearch size={20} color="black"/></button>
           </form>
 
           {/* Display suggestions */}
           {suggestions.length > 0 && (
             <ul className="search-suggestions">
               {suggestions.map((product) => (
-                <li key={product.id} onClick={() => navigate(`/mobiledetail/${product.id}`)} className="product-suggestion">
+                <li key={product.id} onClick={() => navigate(`/laptopdetail/${product.id}`)} className="product-suggestion">
                   <div className="search-content">
                     <div className="search-image">
                       <img
@@ -103,7 +106,7 @@ const Navbar = ({ onUserLogin }) => {
                       />
                     </div>
                     <div className="search-info">
-                      <h5>{product.name} | {product.modelseries} | {product.category} | </h5>
+                      <h5>{product.name} | {product.brand} | {product.modelseries} | {product.category} | </h5>
 
                     </div>
                     <div className="search-price">
@@ -117,7 +120,7 @@ const Navbar = ({ onUserLogin }) => {
           )}
         </div>
 
-
+</div>
         <div className="user-links">
           
           <Link to="/cartlist">

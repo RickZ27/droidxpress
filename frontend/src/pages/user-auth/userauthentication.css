@@ -1,0 +1,95 @@
+.main-user-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.userlogin-container,
+.usersignup-container {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #333;
+    max-width: 350px;
+    width: 100%;
+}
+
+.user-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.userlogin-form input,
+.usersignup-form input {
+    width: 92%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Input Field Focus (Border 1px on Click) */
+.userlogin-form input:focus,
+.usersignup-form input:focus {
+    border: 1px solid #000000; /* Reduced from 2px to 1px */
+}
+
+/* Buttons */
+.userlogin-button,
+.usersignup-button {
+    width: 50%; /* Keeps it at 50% width */
+    padding: 10px;
+    background: linear-gradient(102deg, #01674f 11.81%, #02cd9d 119.4%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto; /* Centers the button */
+}
+
+/* Remove Underline from Links */
+.userauth-links {
+    margin-top: 10px;
+    color: #333;
+}
+
+.userlogin-link,
+.usersignup-link {
+    color: #007bff;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none; /* Removes the underline */
+}
+
+.userlogin-link:hover,
+.usersignup-link:hover {
+    text-decoration: none; /* Ensures underline doesn't return on hover */
+}
+
+/* Error Message */
+.error {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .userlogin-container,
+    .usersignup-container {
+        max-width: 300px;
+        padding: 1.2rem;
+    }
+
+    .userlogin-button,
+    .usersignup-button {
+        width: 70%; /* Slightly wider for smaller screens */
+    }
+}

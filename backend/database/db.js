@@ -10,7 +10,7 @@ const pool = new Pool({
 });
 
 pool.connect()
-    .then(() => console.log("Connected to the techhive database"))
+    .then(() => console.log("Connected to the database"))
     .catch((err) => console.error("Database connection error", err.stack));
 
 module.exports = pool;

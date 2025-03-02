@@ -43,13 +43,13 @@
 }
 
 .product-list-table th, .product-list-table td {
-    padding: 12px;
+    padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
 }
 
 .product-list-table th {
-    background-color: #007BFF;
+    background-color: #20816a;
     color: white;
     font-weight: bold;
 }

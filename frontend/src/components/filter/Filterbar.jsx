@@ -1,61 +1,25 @@
 import { useState } from "react";
 import "./filterbar.css";
 
-const FilterComponent = ({ setFilteredProducts, phoneList }) => {
-  const [selectedBrand, setSelectedBrand] = useState("");
-  const [priceRange, setPriceRange] = useState([0, 1000000]);
+const FilterComponent = ({ setFilteredProducts, laptopList }) => {
+  // State to hold the price range (min and max)
+  const [priceRange, setPriceRange] = useState([0, 1000000]); // Default range
 
-  const brands = ["Apple", "Oppo", "Vivo", "Oneplus", "MI", "Samsung"];
-
-  // Function to handle brand selection (only one at a time)
-  const handleBrandChange = (brand) => {
-    const newBrand = selectedBrand === brand ? "" : brand; // Uncheck if already selected
-    setSelectedBrand(newBrand);
-    filterProducts(newBrand, priceRange); // Apply filter immediately
-  };
-
-  // Function to filter products based on selected brand and price range
-  const filterProducts = (brand, priceRange) => {
-    let filtered = phoneList;
-
-    // Apply brand filter if a brand is selected
-    if (brand) {
-      filtered = filtered.filter((product) => product.brand === brand);
-    }
-
-    // Apply price filter
-    filtered = filtered.filter(
-      (product) => product.price >= priceRange[0] && product.price <= priceRange[1]
-    );
-
-    setFilteredProducts(filtered); // Update the filtered products
-  };
-
-  // Function to filter by price range only
+  // Function to filter products based on price range
   const applyPriceFilter = () => {
-    filterProducts(selectedBrand, priceRange);
+    // Filter products that fall within the price range
+    const filtered = laptopList.filter(
+      (product) =>
+        product.price >= priceRange[0] && product.price <= priceRange[1]
+    );
+    
+    // Update the filtered products
+    setFilteredProducts(filtered);
   };
 
   return (
     <div className="filter-container">
       <h2>Filter Products</h2>
-
-      {/* Brand Filter (Single Selection with Checkbox)
-      <div className="filter-item">
-        <h4>Brands</h4>
-        <div className="brand-checkboxes">
-          {brands.map((brand, index) => (
-            <label key={index}>
-              <input
-                type="checkbox"
-                checked={selectedBrand === brand}
-                onChange={() => handleBrandChange(brand)}
-              />
-              {brand}
-            </label>
-          ))}
-        </div>
-      </div> */}
 
       {/* Price Range Filter (Input Fields) */}
       <div className="filter-item">

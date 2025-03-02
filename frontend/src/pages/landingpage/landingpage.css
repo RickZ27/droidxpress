@@ -153,7 +153,7 @@ color: red;
 .product-price {
   font-size: 18px;
   font-weight: bold;
-  color: #007bff;
+  color: #1362b6;
   margin-bottom: 10px;
 }
 
@@ -178,9 +178,8 @@ color: red;
 .addtocart-btn button{
   width: 90%;
   margin: auto;
-  background-color: #01674f;
+  background: linear-gradient(102deg, #01674f 11.81%, #02cd9d 119.4%);
   color: #fff;
-  border: 0.5px solid black;
   cursor: pointer;
   padding: 10px;
   border-radius: 8px;
@@ -189,6 +188,6 @@ color: red;
 }
 
 .addtocart-btn button:hover{
-  background-color: rgb(233, 86, 86);
+  background: linear-gradient(102deg, #2672a5 11.81%, #5932a3 119.4%);
 }
 

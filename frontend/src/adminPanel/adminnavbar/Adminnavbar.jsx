@@ -1,19 +1,17 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./AdminNavbar.css"; // Make sure to adjust the CSS path if necessary
-import logo from "../../assets/blacklogo.png"; // Correct logo path
+import "./AdminNavbar.css"; 
+import logo from "../../assets/whitelogo.png";
 
 const AdminNavbar = () => {
     const [adminName, setAdminName] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
-        // Check if the user is logged in
         const token = localStorage.getItem("adminToken");
         const storedAdminName = localStorage.getItem("adminName");
 
         if (!token) {
-            // Redirect to login if not logged in
             navigate("/admin/login");
         }
 
@@ -31,6 +29,7 @@ const AdminNavbar = () => {
 
     return (
         <nav className="admin-navbar">
+            <h3 className="navbar-title">Admin Dashboard</h3>
             <div className="logo">
                 <img src={logo} alt="Admin Logo" />
             </div>

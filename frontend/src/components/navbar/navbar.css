@@ -7,12 +7,15 @@
   align-items: center;
   color: black;
   max-width: 100%;
+  justify-content: space-between; /* Aligns content to both ends */
 }
-
+.search-logo-arrange{
+  display: flex;
+  align-items: center;
+}
 /* Logo */
-
 .logo-img {
-  height: 70px; 
+  height: 70px;
   margin: 0;
   padding: 0;
   padding-right: 20px;
@@ -23,17 +26,17 @@
 .search-bar {
   display: flex;
   flex-grow: 1;
-  margin: 0 600px 0 0;
+  margin: 0 40px 0 0; 
   max-width: 400px;
   border: 1px solid #000000;
-  border-radius: 10px; 
+  border-radius: 20px;
   overflow: hidden;
 }
 
 .search-bar input {
-  padding: 8px;
+  padding: 8px 20px;
   width: 100%;
-  border: none; 
+  border: none;
   outline: none;
 }
 
@@ -44,15 +47,27 @@
   cursor: pointer;
 }
 
-.search-btn{
+.search-btn {
   height: 15px;
   border-color: black;
+}
+.search-btn:hover {
+  height: 15px;
+  background: black;
+}
+.button:hover {
+  background-color: #381ecf;
+}
+.searchicon {
+color: #000000;
+  height: 10px; /* Set the size of the search icon */
+  width: 10px;  /* Set the size of the search icon */
 }
 
 /* User Links */
 .user-links {
   display: flex;
-  gap: 30px;
+  gap: 20px; /* Adjusted gap to align links better */
   font-size: 16px;
 }
 
@@ -64,8 +79,6 @@
   color: black;
   font-weight: 500;
 }
-
-
 
 .user-links a svg {
   font-size: 20px;
@@ -113,11 +126,9 @@
   cursor: pointer;
 }
 
-.dropbtn:hover{
+.dropbtn:hover {
   color: #FFD700;
-
 }
-
 
 .dropdown-content {
   display: none;
@@ -163,6 +174,7 @@
   cursor: pointer;
   color: white;
 }
+
 .nav-menu a.active {
   font-weight: bold;
   color: #FFD700 !important;
@@ -205,8 +217,36 @@
   .hamburger {
     display: block;
   }
+
+  /* Ensure User Links Align Properly in Mobile */
+  .user-links {
+    margin-left: auto; /* Align user links to the right in mobile view */
+  }
 }
 
+.user-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+}
+
+.logout-btn {
+  background: red;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.logout-btn:hover {
+  background: darkred;
+}
 
 /* Search Suggestions */
 .search-suggestions {
@@ -256,7 +296,7 @@
 /* Price should be at the right end */
 .search-price {
   font-weight: bold;
-  color: red;
-  min-width: 40px; /* Prevents text from collapsing */
+  color: rgb(57, 168, 23);
+  min-width: 40px; 
   text-align: right;
 }
