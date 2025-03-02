@@ -21,14 +21,6 @@ const Landingpage = () => {
     axios.get('http://localhost:5000/api/products/')
       .then(response => setFeaturedLaptops(response.data))
       .catch(error => console.error(error));
-
-    // axios.get('http://localhost:5000/api/products/category/Samsung')
-    //   .then(response => setFeaturedGamingLaptops(response.data))
-    //   .catch(error => console.error(error));
-
-    // axios.get('http://localhost:5000/api/products/category/Oppo')
-    //   .then(response => setFeaturedGadgets(response.data))
-    //   .catch(error => console.error(error));
   }, []);
 
  
